@@ -1,13 +1,18 @@
-function getMessages(req, res)  {
+// controllers/messages.controllers.js
 
-    res.send('<ul><li>Message 1</li><li>Message 2</li><li>Message 3</li></ul>');  
+const path = require('path');
+
+function getMessages(req, res) {
+  const filePath = path.join(__dirname, '..', 'public', 'images', 'images.jpeg');
+  res.sendFile(filePath);
 }
 
+
 function postMessages(req, res) {
-    console.log('Updating messages!');
+  res.send('Message posted');
 }
 
 module.exports = {
-    getMessages,
-    postMessages
-};  
+  getMessages,
+  postMessages,
+};
